@@ -4,6 +4,9 @@ workflows:
     max_build_duration: 120
     instance_type: mac_mini_m2
 
+    integrations:
+      app_store_connect: 3Fx7xeCpdBLs42Vg5Cq30GiHVsXpGqD67OBAPqKUkz0
+
     environment:
       node: 20
       ios_signing:
