@@ -5,7 +5,7 @@ workflows:
     instance_type: mac_mini_m2
 
     integrations:
-      app_store_connect: 3Fx7xeCpdBLs42Vg5Cq30GiHVsXpGqD67OBAPqKUkz0
+      app_store_connect: Who's Down
 
     environment:
       node: 20
