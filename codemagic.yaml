@@ -23,11 +23,16 @@ workflows:
       - name: Sync Capacitor
         script: npx cap sync ios
 
-      - name: Install CocoaPods
+      - name: Install CocoaPods (force clean)
         script: |
           cd ios/App
+          pod deintegrate || true
           pod install
+          ls
           cd ../..
+
+      - name: Verify workspace exists
+        script: ls ios/App
 
       - name: Build archive
         script: |
