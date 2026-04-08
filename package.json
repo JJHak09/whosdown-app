@@ -3,16 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "type": "commonjs",
+  "scripts": {
+    "build": "echo \"No build step yet\"",
+    "cap:add": "npx cap add ios",
+    "cap:sync": "npx cap sync",
+    "cap:open": "npx cap open ios"
+  },
   "dependencies": {
-    "@capacitor/cli": "^8.3.0",
     "@capacitor/core": "^8.3.0",
     "@capacitor/ios": "^8.3.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.3.0"
   }
 }
