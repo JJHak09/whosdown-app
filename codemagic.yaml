@@ -11,13 +11,17 @@ workflows:
         script: |
           npm install
 
-      - name: Clean iOS (force rebuild)
+      - name: Ensure Capacitor is initialized
+        script: |
+          chmod +x node_modules/.bin/cap
+          npx cap init "WhosDown" "com.yourname.whosdown" --web-dir=public || true
+
+      - name: Clean iOS
         script: |
           rm -rf ios
 
-      - name: Add iOS platform fresh
+      - name: Add iOS platform
         script: |
-          chmod +x node_modules/.bin/cap
           npx cap add ios
 
       - name: Sync Capacitor
@@ -27,6 +31,7 @@ workflows:
       - name: Install Pods
         script: |
           cd ios/App
+          ls
           pod install
 
       - name: Build iOS
