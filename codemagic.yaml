@@ -11,12 +11,20 @@ workflows:
         script: |
           npm install
 
-      - name: Fix Capacitor permissions + Sync
+      - name: Clean iOS (force rebuild)
+        script: |
+          rm -rf ios
+
+      - name: Add iOS platform fresh
         script: |
           chmod +x node_modules/.bin/cap
+          npx cap add ios
+
+      - name: Sync Capacitor
+        script: |
           npx cap sync ios
 
-      - name: Install CocoaPods
+      - name: Install Pods
         script: |
           cd ios/App
           pod install
