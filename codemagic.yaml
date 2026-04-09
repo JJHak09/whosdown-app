@@ -11,11 +11,12 @@ workflows:
         script: |
           npm install
 
-      - name: Capacitor sync
+      - name: Fix Capacitor permissions + Sync
         script: |
+          chmod +x node_modules/.bin/cap
           npx cap sync ios
 
-      - name: Install CocoaPods (THIS FIXES YOUR ISSUE)
+      - name: Install CocoaPods
         script: |
           cd ios/App
           pod install
