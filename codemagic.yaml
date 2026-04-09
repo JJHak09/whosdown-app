@@ -27,7 +27,7 @@ workflows:
         script: |
           npx cap sync ios
 
-      - name: Build iOS (SIGNED)
+      - name: Build iOS (AUTO SIGN FIX)
         script: |
           cd ios/App
           xcodebuild -scheme App \
@@ -36,7 +36,8 @@ workflows:
                      -archivePath build/App.xcarchive \
                      archive \
                      DEVELOPMENT_TEAM=V6W7YXDSH3 \
-                     CODE_SIGN_STYLE=Automatic
+                     CODE_SIGN_STYLE=Automatic \
+                     -allowProvisioningUpdates
 
     artifacts:
       - ios/App/build/**/*.ipa
